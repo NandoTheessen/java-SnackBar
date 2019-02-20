@@ -5,10 +5,10 @@ class Snack {
     private int id;
     private String name;
     private double cost;
-    private int quantity;
+    private double quantity;
     private int vendingMachineID;
 
-    public Customer(String name, double cost, int quantity, int vendingMachineID) {
+    public Snack(String name, double cost, double quantity, int vendingMachineID) {
         maxId++;
         this.id = maxId;
         this.name = name;
@@ -21,7 +21,7 @@ class Snack {
         this.name = name;
     }
 
-    public int getQuantity() {
+    public double getQuantity() {
         return quantity;
     }
 
@@ -29,7 +29,7 @@ class Snack {
         this.quantity = quantity + additionalProduct;
     }
 
-    public int sellProduct(int quantitySold) {
+    public double sellProduct(double quantitySold) {
         if (quantity >= quantitySold) {
             this.quantity = quantity - quantitySold;
             return quantitySold * cost;
